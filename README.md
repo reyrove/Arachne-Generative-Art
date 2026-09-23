@@ -1,200 +1,162 @@
 # Arachne — Generative Art
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://reyrove.github.io/Arachne-Generative-Art)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-> **Generative ring art with rotating geometric tiles.** Each refresh creates a unique composition of concentric rings filled with tiled geometric patterns, resembling a spider's web of abstract shapes.
-
-## 🎨 Live Demo
-
-<div align="center">
-  <a href="https://reyrove.github.io/Arachne-Generative-Art" target="_blank">
-    <img src="demo-screenshot.jpg" alt="Arachne Website Demo" width="800" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);"/>
-  </a>
-  <br><br>
-  <a href="https://reyrove.github.io/Arachne-Generative-Art" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_View_Live_Demo-0a0a0a?style=for-the-badge&logo=githubpages&logoColor=white&color=6C3B9E" alt="View Live Demo" width="300"/>
-  </a>
-  <br>
-  <em>Click the image or button to experience the generative art</em>
-</div>
-
-## 👕 Apparel Preview
-
-<div align="center">
-  <img src="Arachne.jpg" alt="Arachne on T-Shirt" width="600" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);"/>
-  <br>
-  <em>Arachne artwork printed on a T-shirt</em>
-</div>
-
-## ✨ Features
-
-- **Concentric Rings** — 5-15 rings radiating from the center
-- **Rotating Tiles** — Each ring rotates at a different speed
-- **Geometric Patterns** — Lines and shapes tiled in circular patterns
-- **Gradient Background** — Smooth diagonal gradient behind the rings
-- **Random Colors** — Unique color palettes for each generation
-- **Save & Share** — Download as PNG
-- **Apparel Mode** — Preview artwork on a T-shirt mockup
-- **Responsive** — Works on desktop, tablet, and mobile
-- **p5.js Powered** — Built with the creative coding library
-- **Keyboard Shortcuts**:
-  - `R` — Regenerate
-  - `S` — Save image
-  - `T` — Toggle apparel view
-  - `Space` — Regenerate
-
-## 🎨 Artwork Details
-
-| Parameter | Range | Description |
-|-----------|-------|-------------|
-| **Rings** | 5–15 | Number of concentric rings |
-| **Tile Size** | Variable | Each tile is a small geometric unit |
-| **Rotation Speed** | -5 to 5 | Each ring rotates at a different speed |
-| **Colors** | Random | Unique palettes per generation |
-
-## 🎯 Visual Elements
-
-### Concentric Rings
-- Rings radiate from the center outward
-- Each ring has a unique rotation speed
-- Creates dynamic, layered compositions
-
-### Geometric Tiles
-- Small rectangular tiles arranged in circles
-- Each tile contains random lines and shapes
-- Tiles are densely packed for intricate patterns
-
-### Gradient Background
-- Soft diagonal gradient behind the rings
-- Warm or cool color palettes
-- Provides depth and contrast
-
-### Pattern Generation
-- Each tile is uniquely generated
-- Random lines and shapes inside each tile
-- Creates rich, organic textures
-
-## 🚀 Quick Start
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/reyrove/Arachne-Generative-Art.git
-
-# Navigate to the directory
-cd Arachne-Generative-Art
-
-# Open in browser
-open index.html
-# or use a live server
-```
-
-### Deploy to GitHub Pages
-
-1. Push to GitHub
-2. Go to Settings → Pages
-3. Select branch `main` and root folder
-4. Your site will be live at `https://reyrove.github.io/Arachne-Generative-Art`
-
-## 🧠 How It Works
-
-The artwork creates intricate ring patterns using a tile-based approach:
-
-1. **Setup**:
-   - Random gradient background
-   - Random number of rings (5–15)
-   - Each ring gets a unique tile size and rotation speed
-
-2. **Tile Generation**:
-   - Each ring creates a small graphic tile
-   - Tiles contain random lines and shapes
-   - Tiles are repeated in a circular pattern
-
-3. **Rendering**:
-   - Rings are drawn from largest to smallest
-   - Each ring rotates at its own speed
-   - Tiles fill the circular area of each ring
-
-4. **Composition**:
-   - Creates a web-like pattern
-   - Similar to a spider's web (Arachne)
-   - Intricate and mesmerizing
-
-## 📁 File Structure
-
-```
-Arachne-Generative-Art/
-├── index.html          # Main application (all-in-one)
-├── Arachne.jpg         # T-shirt mockup image
-├── fav.svg             # Favicon
-├── demo-screenshot.jpg # Website demo screenshot
-├── README.md           # This file
-└── LICENSE             # MIT License
-```
-
-## 🛠️ Tech Stack
-
-- **p5.js** — Creative coding library
-- **Canvas API** — 2D rendering with gradients
-- **CSS Flexbox/Grid** — Responsive layout
-- **GitHub Pages** — Hosting
-
-## 🎯 Interactive Controls
-
-| Action | Keyboard | Button |
-|--------|----------|--------|
-| Regenerate | `R` or `Space` | Click "regenerate" |
-| Save Image | `S` | Click "regenerate" |
-| Toggle Apparel | `T` | Click "apparel" |
-
-## 🎨 The Creative Process
-
-### Inspired by Arachne
-The artwork is named after Arachne, the weaver from Greek mythology who was transformed into a spider. Like a spider's web, the concentric rings and geometric patterns create an intricate, woven appearance.
-
-### Tile-Based Architecture
-Each ring is built from small tiles that repeat around the circle. The tiles contain random lines and shapes, creating complex patterns from simple building blocks.
-
-### Dynamic Rotation
-Each ring rotates at a different speed, creating a sense of motion and depth. The varying speeds produce interference patterns that make the artwork feel alive.
-
-## 📱 Responsive Design
-
-The application automatically adapts to:
-- Desktop screens
-- Tablets
-- Mobile phones
-- Landscape orientation
-- Various aspect ratios
-- Small screens (down to 380px wide)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Fork the repository
-- Create a feature branch
-- Submit a pull request
-
-### Ideas for Contributions:
-- Additional ring patterns
-- New tile designs
-- Interactive controls
-- Color palette presets
-- Animation features
-- More apparel mockups
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Created with p5.js
-- Inspired by spider webs and Greek mythology
-- Special thanks to the creative coding community
+> A seed-based generative system for rotating ring compositions.  
+> A reproducible catalogue of computational textile compositions.
 
 ---
 
-**Built with ❤️ and woven dreams**
+## What is this?
+
+**Arachne** is a generative design system that layers rotating bands of tiled pixels into concentric rings. Where the rings intersect, a moiré interference emerges — a woven surface that is neither fully planned nor fully random, but **emergent**.
+
+Every artwork in this catalogue is defined by a single numeric seed. The same seed always produces the identical composition — making each piece **traceable, reproducible, and licensable** across textile, print, and apparel applications.
+
+Named for the weaver of Greek myth — the mortal who rivalled a goddess and was transformed into a spider — **Arachne** translates that myth into code.
+
+---
+
+## Live
+
+🌐 **[View the catalogue →](https://reyrove.github.io/Arachne-Generative-Art/)**
+
+---
+
+## The System
+
+The generator combines two layers:
+
+| Layer | Description |
+|-------|-------------|
+| **Ring bands** | Concentric discs of tiled pixel-patterns, each rotated at its own speed. |
+| **Moiré interference** | Where rings overlap, an emergent pattern forms — the visual signature of the system. |
+
+Both layers are driven by the same seed, ensuring deterministic output.
+
+### Parameters
+
+- **Ring count** — 5 to 15 concentric bands
+- **Tile size** — derived from canvas scale
+- **Rotation speeds** — from `-5` to `+5`, chosen per ring
+- **Color palette** — randomized RGB per tile
+
+---
+
+## Structure
+
+```
+Arachne-Generative-Art/
+├── index.html          ← Full catalogue (single-file)
+├── images/
+│   ├── fav.svg
+│   ├── arachne-tote.png
+│   ├── arachne-tee.png
+│   └── arachne-cushion.png
+└── README.md
+```
+
+The entire project is contained in a single `index.html` — no build step, no dependencies, no framework. Open it in any modern browser.
+
+---
+
+## Features
+
+- **Seed-based generation** — every composition is deterministic and reproducible
+- **Live catalogue** — cover, plate, surfaces, process, archive, commission sections
+- **Multiple surfaces** — print, scarf, textile, wallpaper — all rendered from the same seed
+- **Archive of 8 seeds** — click any plate to load it into the main view
+- **PNG export** — download any composition directly from the browser
+- **Keyboard shortcuts** — `R` for new seed, `S` to save
+- **Legal modal** — licensing, terms, and credits built in
+- **Responsive** — works on desktop, tablet, and mobile
+- **Mobile-first navbar** — horizontally scrollable with fade hint
+
+---
+
+## Usage
+
+### Generate a new composition
+
+Click **New Seed** or press `R`.
+
+### Download the current composition
+
+Click **Download** or press `S`.
+
+### Load a seed from the archive
+
+Click any plate in the **Archive** section.
+
+---
+
+## Color System
+
+Each ring is assigned a randomized tile palette drawn from:
+
+- **Tile background** — RGB values with a bias toward deep tones
+- **Tile stroke** — a matching line drawn inside each tile
+- **Background gradient** — soft cool tones across the canvas
+
+Each seed selects a unique combination — no two compositions share the same palette.
+
+---
+
+## Technical Notes
+
+- Pure vanilla JavaScript — no libraries
+- Canvas 2D rendering
+- Custom xorshift random generator for deterministic seeds
+- Device-pixel-ratio aware rendering
+- Per-ring offscreen tile pre-rendering for performance
+
+---
+
+## About
+
+**Arachne** is a project by [Reyhaneh Daneshdoost](https://reyrove.github.io/) — an Iranian-born artist working at the intersection of classical textile logic and generative systems.
+
+The work begins with a simple observation: the woven surface — repetitive, mathematically structured, infinitely variable — has always been a form of computation, long before computers.
+
+**Arachne** is an attempt to render that logic visible.
+
+> *A spider spins without a plan — yet every web is structurally perfect.*
+
+---
+
+## Licensing
+
+All compositions are seed-documented and available for licensing across textile, surface, and apparel applications.
+
+For commercial use, custom editions, or exclusive rights:
+
+📧 **reyhanehdaneshdoost@gmail.com**
+
+See the **Licensing** section in the live catalogue for details.
+
+---
+
+## Links
+
+- 🌐 [Website](https://reyrove.github.io/)
+- 📷 [Instagram](https://www.instagram.com/rey._.rove/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/reyhaneh-daneshdoost-730481160/)
+- 🐦 [X](https://x.com/reyrove)
+
+---
+
+## Credits
+
+**Design & Generative System**  
+Reyhaneh Daneshdoost
+
+**Typefaces**  
+Cormorant Garamond · DM Mono
+
+**Edition**  
+Arachne — Autumn 2026
+
+---
+
+<p align="center">
+  <em>Computational Textile Design</em><br />
+  <sub>© Reyrove Studio · All compositions reproducible by seed</sub>
+</p>
