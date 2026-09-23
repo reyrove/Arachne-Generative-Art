@@ -1688,7 +1688,6 @@
 <script>
 // ============================================================
 // ARACHNE — GENERATIVE RING SYSTEM
-// Same architecture as Girih, with the Arachne renderer.
 // ============================================================
 
 class RandomGenerator {
@@ -1712,6 +1711,12 @@ let seed = Math.floor(Date.now() + Math.random() * 1000000);
 let rng = new RandomGenerator(seed);
 let resizeTmr = null;
 let nextFrame = null;
+
+// --- SEED DISPLAY HELPER ---
+// Show the LAST 8 digits so each seed is visually distinct.
+function seedLabel(n) {
+  return String(n).slice(-8);
+}
 
 // --- RENDER COMPOSITION (Arachne engine) ---
 function renderComposition(canvas, opts) {
@@ -1827,14 +1832,14 @@ function updateUI() {
   const s = document.getElementById('seedDisplay');
   const rings = document.getElementById('ringsDisplay');
   const tile = document.getElementById('tileDisplay');
-  if (s) s.textContent = String(seed).slice(0, 8);
+  if (s) s.textContent = seedLabel(seed);
   if (rings) rings.textContent = features.ringCount || '—';
   if (tile) tile.textContent = (features.tileSize || 0) + 'px';
 }
 
 // --- REGENERATE ---
 function regenerate() {
-  seed = Date.now() + Math.random() * 1000000;
+  seed = Math.floor(Date.now() + Math.random() * 1000000);
   rng = new RandomGenerator(seed);
   layoutCanvas();
 }
@@ -1843,7 +1848,7 @@ function regenerate() {
 function autoDownloadCanvas() {
   const canvas = document.getElementById('target');
   const link = document.createElement('a');
-  const seedStr = String(seed).slice(0, 8);
+  const seedStr = seedLabel(seed);
   link.download = prefix + '_Seed' + seedStr + '.png';
   link.href = canvas.toDataURL('image/png', 1.0);
   link.click();
@@ -1966,13 +1971,23 @@ function initArchive() {
   grid.innerHTML = '';
   archiveSeeds.length = 0;
 
+  // Base time taken once — so all 8 share the same "session" range
+  const base = Date.now();
+  const used = new Set();
+
   for (let i = 0; i < 8; i++) {
-    const s = Math.floor(Date.now() + Math.random() * 1000000) + i * 97;
+    // Each seed: base + random middle + unique offset
+    // → guaranteed distinct
+    let s;
+    do {
+      s = base + Math.floor(Math.random() * 1000000) + i * 97;
+    } while (used.has(s));
+    used.add(s);
     archiveSeeds.push(s);
 
     const item = document.createElement('div');
     item.className = 'archive-item';
-    item.setAttribute('data-seed', String(s).slice(0, 6));
+    item.setAttribute('data-seed', seedLabel(s));
     const cv = document.createElement('canvas');
     item.appendChild(cv);
     item.addEventListener('click', () => loadArchiveSeed(i));
@@ -2006,6 +2021,7 @@ function loadArchiveSeed(index) {
   layoutCanvas();
   drawFramedPlate();
   drawSurfaces();
+  updateUI();  // ← Ensures Plate 001 shows the selected archive seed
   document.getElementById('work').scrollIntoView({ behavior: 'smooth' });
 }
 
